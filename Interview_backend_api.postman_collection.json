@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "82946884-1fe5-4038-a2ff-976bf565da36",
+		"name": "Interview_backend_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16246433"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get products by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/admin/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Create product by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "category",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/admin/products/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Update product by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/admin/products/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/admin/products/delete{$product_id}"
+			},
+			"response": []
+		},
+		{
+			"name": "View users by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/admin/users"
+			},
+			"response": []
+		},
+		{
+			"name": "View profile by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user details by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/users/update"
+			},
+			"response": []
+		},
+		{
+			"name": "View product by user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "65|vFNlE7VQ4bkXNTocLXtDAg8wUU0eteii0RgDWvhzfb36dfb9"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/user/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Add or remove product by user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/user/products"
+			},
+			"response": []
+		}
+	]
+}

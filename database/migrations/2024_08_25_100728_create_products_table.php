@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assignments', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('course_id');
-            $table->string('title');
+            $table->string('product_name');
             $table->text('description')->nullable();
-            $table->dateTime('due_date')->nullable();
-            $table->string('file_url');
             $table->string('image')->nullable();
-            $table->string('duration')->nullable();
-            $table->integer('status')->default(0)->comment('1 => active, 0 => inactive');
+            $table->decimal('price');
+            $table->integer('category')->default(1)->comment('1 => Available, 0 => Upcoming');
+            $table->integer('status')->default(0)->comment('1 => Active, 0 => Inactive');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assignments');
+        Schema::dropIfExists('products');
     }
 };

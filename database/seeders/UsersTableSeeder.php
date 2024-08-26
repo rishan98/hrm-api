@@ -19,16 +19,12 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
 
         User::create([
-            'first_name' => "Onsty",
-            'last_name' => "Administrator",
+            'name' => "Administrator",
             'phone' => null,
-            'address' => null,
             'profile_image' => null,
-            'description' => null,
-            'register_date' => null,
             'role_id' => 1,
             'status' => 1,
-            'email' => "onsty@gmail.com",
+            'email' => "admin@gmail.com",
             'email_verified_at' => date('Y-m-d H:i:s'),
             'password' => Hash::make('12345678'),
             'remember_token' => null,

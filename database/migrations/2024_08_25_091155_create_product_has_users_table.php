@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('product_has_users', function (Blueprint $table) {
             $table->id();
+            $table->integer('product_id');
             $table->integer('user_id');
-            $table->integer('course_id');
-            $table->dateTime('attendance_date');
-            $table->integer('status')->default(0)->comment('1 => present, 0 => absent');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('product_has_users');
     }
 };
